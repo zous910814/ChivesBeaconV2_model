@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
 import joblib
 import os
 
@@ -38,6 +39,10 @@ model.fit(X, y)
 os.makedirs('./model', exist_ok=True)
 joblib.dump(model, 'model/linear_regression.joblib')
 joblib.dump(scaler, 'model/scaler_fresh.joblib')
+
+y_pred = model.predict(X)
+mse = mean_squared_error(y, y_pred)
+print(f"\nLinear Regression 訓練集 MSE: {mse:.2f}")
 
 # === 8. 推薦最新一天 ===
 latest_date = df['date'].max()
