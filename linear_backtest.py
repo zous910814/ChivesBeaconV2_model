@@ -36,5 +36,5 @@ else:
     top10 = df_target.sort_values(by='Predicted_KD_K', ascending=False).head(10)
 
     # 8. 顯示結果
-    print(f"\n推薦日期：{target_date.date()}，預測未來 5 日 KD_K 最高的前 10 檔股票：\n")
+    print(f"\n推薦日期:{target_date.date()}，預測未來 5 日 KD_K 最高的前 10 檔股票：\n")
     print(top10[['stock_code', 'date', 'Predicted_KD_K']])

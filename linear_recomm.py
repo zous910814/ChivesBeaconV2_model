@@ -54,5 +54,5 @@ top10 = latest_data.sort_values(by='Predicted_KD_K', ascending=False).head(10)
 
 # === 9. 顯示推薦結果 ===
 print(f"\n模型與標準化器已儲存至 ./model/")
-print(f"\n最新推薦（{latest_date.date()}）未來KD_K最高的前10支股票：\n")
+print(f"\n最新推薦({latest_date.date()})未來KD_K最高的前10支股票:\n")
 print(top10[['stock_code', 'date', 'Predicted_KD_K']])
